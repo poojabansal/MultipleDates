@@ -1,0 +1,30 @@
+<head>
+  <title>twodates</title>
+</head>
+
+<body>
+	<br/>
+  {{> myDatesForm}}
+</body>
+
+<template name="myDatesForm">
+  {{#autoForm id="myDatesForm" validation="blur" type="method" schema="myDatesSchema" meteormethod="insertMyDates"}}
+  <label class='col-sm-2'>Events</label>
+  <div class='col-sm-9'>
+		{{> afQuickField name="event"}}
+	</div>
+  <div class="form-group">
+    <label class='col-sm-2'>Dates</label>
+    <div class="col-sm-9 nested-grid-hot-fix">
+      <div class="col-sm-6">
+			  {{> afQuickField name="date_one" label=false}}
+      </div>
+      <div class="col-sm-6">
+	  		{{> afQuickField name="date_two" label=false}}
+      </div>
+    </div>
+    <div class='clearfix'></div>
+    <button type="submit">Go</button>
+  </div>
+  {{/autoForm}}
+</template>
